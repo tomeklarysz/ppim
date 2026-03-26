@@ -42,7 +42,7 @@ else:
     out_compressed = cv2.VideoWriter('compressed_mjpg.avi', mjpeg_fourcc, fps, (width, height))
 
     cap.set(cv2.CAP_PROP_POS_FRAMES, 0) # Reset to start
-    for i in range(int(5 * fps)): # 5 second loop
+    while True: # 5 second loop
         ret, frame = cap.read()
         if not ret: break
         
